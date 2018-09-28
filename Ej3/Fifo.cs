@@ -18,15 +18,14 @@ namespace Ej3
 
         public override void AgregarPaciente(Paciente pPaciente)
         {
-            iPacientes.Add(pPaciente);
+            cPacientes.Add(pPaciente);
         }
 
-        public override Paciente SiguientePaciente()
+        public override void Reordenar()
         {
-            Paciente paciente = iPacientes[0];
-            iPacientes.RemoveAt(0);
-            return paciente;
+            cPacientes.OrderBy(p => p.HoraDeLlegada);
         }
+
 
     }
 }
