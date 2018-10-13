@@ -5,24 +5,24 @@ using System.Text;
 
 namespace Ej3
 {
-    class Paciente
+    class DatosPaciente
     {
         private string iNombre;
         private string iApellido;
         private string iDni;
         private int iPrioridad;
-        private DateTime iHoraDeLlegada;
+        private string iHoraDeLlegada;
 
 
         //Constructor
-        public Paciente(string pNombre, string pApellido, string pDni, int pPrioridad)
+
+        public DatosPaciente(string pNombre, string pApellido, string pDni, int pPrioridad, string pHoraDeLlegada)
         {
             this.iNombre = pNombre;
             this.iApellido = pApellido;
             this.iDni = pDni;
             this.iPrioridad = pPrioridad;
-            this.iHoraDeLlegada = DateTime.Now;
-
+            this.iHoraDeLlegada = pHoraDeLlegada;
         }
 
         public string Nombre
@@ -44,12 +44,9 @@ namespace Ej3
             get { return this.iPrioridad; }
         }
 
-        public DateTime HoraDeLlegada
+        public string HoraDeLlegada
         {
             get { return this.iHoraDeLlegada; }
         }
-
-
-
     }
 }

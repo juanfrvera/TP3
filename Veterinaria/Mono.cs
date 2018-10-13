@@ -9,7 +9,6 @@ namespace Ej1
     {
         public override void HacerRuido()
         {
-            base.HacerRuido();
             Console.WriteLine("Ua ua");
         }
     }

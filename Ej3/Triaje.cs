@@ -7,13 +7,12 @@ namespace Ej3
 {
     class Triaje : ListaPacientes
     {
-
-
-
-
-
         //Metodos
 
+        /// <summary>
+        /// Agrega un paciente a la lista de pacientes segun su prioridad
+        /// </summary>
+        /// <param name="pPaciente"></param>
         public override void AgregarPaciente(Paciente pPaciente)
         {
             int i = 0;
@@ -34,8 +33,11 @@ namespace Ej3
 
         public override void Reordenar()
         {
-            cPacientes.OrderBy(p => p.Prioridad).ThenBy(p => p.HoraDeLlegada);
+           cPacientes = cPacientes.OrderBy(p => p.Prioridad).ThenBy(p => p.HoraDeLlegada).ToList<Paciente>();
         }
-
+        public override string ObtenerCriterio()
+        {
+            return "Triaje";
+        }
     }
 }

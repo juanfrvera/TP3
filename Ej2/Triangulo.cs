@@ -43,12 +43,19 @@ namespace Ej2
         {
             get { return Punto1.CalcularDistanciaDesde(Punto3); }
         }
-
+        /// <summary>
+        /// Calcula el perimetro como la suma de sus lados.
+        /// </summary>
+        /// <returns></returns>
         public override double CalcularPerimetro()
         {
             return LadoA + LadoB + LadoC; 
         }
 
+        /// <summary>
+        /// Calcula el area aplicando la formula de Heron.
+        /// </summary>
+        /// <returns></returns>
         public override double CalcularArea()
         {
             double s = CalcularPerimetro() / 2;
@@ -56,12 +63,29 @@ namespace Ej2
         }
 
         //Constructores
+
+            /// <summary>
+            /// Construye el triangulo cuyos puntos son "pPunto1", "pPunto2" y "pPunto3".
+            /// </summary>
+            /// <param name="pPunto1"></param>
+            /// <param name="pPunto2"></param>
+            /// <param name="pPunto3"></param>
         public Triangulo(Punto pPunto1, Punto pPunto2, Punto pPunto3)
         {
             this.Punto1 = pPunto1;
             this.Punto2 = pPunto2;
             this.Punto3 = pPunto3;
         }
+
+        /// <summary>
+        /// Construye el triangulo cuyos puntos son ("p1X',"p1Y"), ("p2X","p2Y") y ("p3X","p3Y").
+        /// </summary>
+        /// <param name="p1X"></param>
+        /// <param name="p1Y"></param>
+        /// <param name="p2X"></param>
+        /// <param name="p2Y"></param>
+        /// <param name="p3X"></param>
+        /// <param name="p3Y"></param>
         public Triangulo(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y) : 
             this(new Punto(p1X, p1Y), new Punto(p2X, p2Y), new Punto(p3X, p3Y)) { }
     }

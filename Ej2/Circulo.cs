@@ -30,12 +30,25 @@ namespace Ej2
             return Math.PI * Math.Pow(Radio, 2);
         }
         //Constructores
+
+        /// <summary>
+        /// Construye el circulo de centro "pCentro" y radio "pRadio".
+        /// </summary>
+        /// <param name="pCentro"></param>
+        /// <param name="pRadio"></param>
         public Circulo(Punto pCentro, double pRadio)
         {
             this.Centro = pCentro;
             this.Radio = pRadio;
         }
+
+        /// <summary>
+        /// Construye el circulo cuyo centro es el punto ("pX","pY") y su radio es "pRadio".
+        /// </summary>
+        /// <param name="pX"></param>
+        /// <param name="pY"></param>
+        /// <param name="pRadio"></param>
         public Circulo(double pX, double pY, double pRadio) : this(new Punto(pX, pY), pRadio) {}
-        //Metodos
+        
     }
 }

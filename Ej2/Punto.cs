@@ -24,6 +24,12 @@ namespace Ej2
         }
 
         //Constructores
+
+            /// <summary>
+            /// Construye el punto cuya componente en X es "pX" y su componente en Y es "pY".
+            /// </summary>
+            /// <param name="pX"></param>
+            /// <param name="pY"></param>
         public Punto(double pX, double pY)
         {
             this.X = pX;
@@ -31,10 +37,16 @@ namespace Ej2
         }
 
         //Metodos
-        public double CalcularDistanciaDesde(Punto punto)
+
+            /// <summary>
+            /// Calcula la distancia entre este si mismo y el punto "pPunto".
+            /// </summary>
+            /// <param name="pPunto"></param>
+            /// <returns></returns>
+        public double CalcularDistanciaDesde(Punto pPunto)
         {
             //Distancia euclidiana
-            return Math.Sqrt(Math.Pow(this.X - punto.X, 2) + Math.Pow(this.Y - punto.Y, 2));
+            return Math.Sqrt(Math.Pow(this.X - pPunto.X, 2) + Math.Pow(this.Y - pPunto.Y, 2));
         }
     }
 }

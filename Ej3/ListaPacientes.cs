@@ -8,7 +8,6 @@ namespace Ej3
     abstract class ListaPacientes
     {
         public enum Tipos {Triaje,Fifo}
-        private ListaPacientes instancia;
         protected static List<Paciente> cPacientes;
 
         //Constructor
@@ -20,27 +19,38 @@ namespace Ej3
         protected ListaPacientes()
         {
             Reordenar();
-
         }
         
         //Metodos
+        /// <summary>
+        /// Agrega un paciente a la lista de pacientes
+        /// </summary>
+        /// <param name="pPaciente"></param>
         public abstract void AgregarPaciente(Paciente pPaciente);
+
+        /// <summary>
+        /// Devuelve el siguiente paciente a atender
+        /// </summary>
+        /// <returns></returns>
         public virtual Paciente SiguientePaciente()
         {
-            Paciente paciente = cPacientes[0];
-            cPacientes.RemoveAt(0);
-            return paciente;
-        }
-        
-        public void ElegirTipo(Tipos pTipo)
-        {
-            if (pTipo == Tipos.Triaje)
-                instancia = new Triaje();
-            if (pTipo == Tipos.Fifo)
-                instancia = new Fifo();
+            if (cPacientes.Count > 0)
+            {
+                Paciente paciente = cPacientes[0];
+                cPacientes.RemoveAt(0);
+                return paciente;
+            }
+            return null;
         }
 
+        /// <summary>
+        /// Reordena la lista segun el nuevo criterio
+        /// </summary>
         public abstract void Reordenar();
-
+        /// <summary>
+        /// Devuelve el criterio usado
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ObtenerCriterio();
     }
 }

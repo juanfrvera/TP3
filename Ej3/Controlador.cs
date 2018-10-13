@@ -9,6 +9,13 @@ namespace Ej3
     {
         ListaPacientes instancia;
 
+        /// <summary>
+        /// Por defecto la lista inicia en FIFO
+        /// </summary>
+        public Controlador()
+        {
+            instancia = new Fifo();
+        }
 
         //Metodos
         public void Agregar(string pNombre,string pApellido,string pDni, int pPrioridad)
@@ -17,14 +24,38 @@ namespace Ej3
             instancia.AgregarPaciente(nuevoPaciente);
         }
 
-        public Paciente Atender()
+        public DatosPaciente AtenderPaciente()
         {
-            return instancia.SiguientePaciente();
+            Paciente paciente = instancia.SiguientePaciente();
+            if (paciente == null )
+                {
+                    return null;
+                }
+            DatosPaciente datos = new DatosPaciente(paciente.Nombre, paciente.Apellido, paciente.Dni, paciente.Prioridad, paciente.HoraDeLlegada.ToString());
+            return datos;
         }
 
         public void CambiarTipo()
         {
+            Type tipoActual = instancia.GetType();
+            if (tipoActual == typeof(Fifo))
+                {
+                    instancia = new Triaje();
+                }
+            else
+                {
+                    instancia = new Fifo();
+                }
+            instancia.Reordenar();
 
         }
+        public string ObtenerCriterioDeSeleccion()
+        {
+
+            return instancia.ObtenerCriterio();
+        }
+
     }
+
+   
 }

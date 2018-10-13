@@ -23,9 +23,12 @@ namespace Ej3
 
         public override void Reordenar()
         {
-            cPacientes.OrderBy(p => p.HoraDeLlegada);
+           cPacientes = cPacientes.OrderBy(p => p.HoraDeLlegada).ToList<Paciente>();
         }
 
-
+        public override string ObtenerCriterio()
+        {
+            return "FIFO";
+        }
     }
 }

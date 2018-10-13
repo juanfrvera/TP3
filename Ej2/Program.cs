@@ -31,6 +31,10 @@ namespace Ej2
                 }
             }
         }
+
+        /// <summary>
+        /// Menu para las opciones disponibles al circulo.
+        /// </summary>
         static void MenuCirculo()
         {
             Console.Write("Ingrese coordenada X del centro: ");
@@ -65,6 +69,10 @@ namespace Ej2
                 } 
             }
         }
+
+        /// <summary>
+        /// Menu para las opciones disponibles al Triangulo.
+        /// </summary>
         static void MenuTriangulo()
         {
             Console.Write("Ingrese coordenada X del primer punto: ");
